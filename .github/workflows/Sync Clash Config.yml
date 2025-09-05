@@ -37,7 +37,7 @@ jobs:
         env:
           TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
-          git config --global user.name "sheep"
+          git config --global user.name "wmy980204"
           git config --global user.email "wmy8928@gmail.com"
           git pull origin main
           git add clash.yaml
