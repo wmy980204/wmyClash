@@ -179,7 +179,7 @@ proxy-groups:
     proxies:
       - DIRECT
 
-  - name: "⛽ 本月流量 (刷新订阅更新) 34919MB"
+  - name: "⛽ 本月流量 (刷新订阅更新) 34022MB"
     type: select
     proxies:
       - DIRECT
