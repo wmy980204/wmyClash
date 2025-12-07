@@ -8,7 +8,7 @@ external-controller: '0.0.0.0:9090'
 secret: ''
 
 
-#▓▓▓▓▓▓▓▓▓▓▓2025/06/16▓▓▓▓▓▓▓▓▓▓▓▓
+#▓▓▓▓▓▓▓▓▓▓▓2025/12/01▓▓▓▓▓▓▓▓▓▓▓▓
 
 
 hosts:
@@ -179,7 +179,7 @@ proxy-groups:
     proxies:
       - DIRECT
 
-  - name: "⛽ 本月流量 (刷新订阅更新) 35315MB"
+  - name: "⛽ 本月流量 (刷新订阅更新) 39354MB"
     type: select
     proxies:
       - DIRECT
@@ -250,10 +250,19 @@ rule-providers:
   CNdirect4:
     behavior: classical
     type: http
-    url: "http://154.21.81.72/CNdirect4.yaml"
+    url: "http://154.12.188.13/CNdirect4.yaml"
     interval: 86400
     path: ./xzxz/CNdirect4.yaml
 
+
+
+# 直连域名列表
+  CNdirect5:
+    behavior: classical
+    type: http
+    url: "http://154.12.189.31/CNdirect5.yaml"
+    interval: 86400
+    path: ./xzxz/CNdirect5.yaml
 
 
 # CNip列表
@@ -290,10 +299,19 @@ rule-providers:
   CNip4:
     behavior: classical
     type: http
-    url: "http://154.21.81.72/CNip4.yaml"
+    url: "http://154.12.188.13/CNip4.yaml"
     interval: 86400
     path: ./xzxz/CNip4.yaml
 
+
+
+# CNip列表
+  CNip5:
+    behavior: classical
+    type: http
+    url: "http://154.12.189.31/CNip5.yaml"
+    interval: 86400
+    path: ./xzxz/CNip5.yaml
 
 
 # 私
@@ -330,10 +348,19 @@ rule-providers:
   private4:
     behavior: classical
     type: http
-    url: "http://154.21.81.72/private4.yaml"
+    url: "http://154.12.188.13/private4.yaml"
     interval: 86400
     path: ./xzxz/private4.yaml
 
+
+
+# 私
+  private5:
+    behavior: classical
+    type: http
+    url: "http://154.12.189.31/private5.yaml"
+    interval: 86400
+    path: ./xzxz/private5.yaml
 
 
 # App
@@ -370,9 +397,19 @@ rule-providers:
   applications4:
     behavior: classical
     type: http
-    url: "http://154.21.81.72/applications4.yaml"
+    url: "http://154.12.188.13/applications4.yaml"
     interval: 86400
     path: ./xzxz/applications4.yaml
+
+
+
+# App
+  applications5:
+    behavior: classical
+    type: http
+    url: "http://154.12.189.31/applications5.yaml"
+    interval: 86400
+    path: ./xzxz/applications5.yaml
 
 
 
@@ -411,10 +448,19 @@ rule-providers:
   apple4:
     behavior: classical
     type: http
-    url: "http://154.21.81.72/apple4.yaml"
+    url: "http://154.12.188.13/apple4.yaml"
     interval: 86400
     path: ./xzxz/apple4.yaml
 
+
+
+# apple+icloud
+  apple5:
+    behavior: classical
+    type: http
+    url: "http://154.12.189.31/apple5.yaml"
+    interval: 86400
+    path: ./xzxz/apple5.yaml
 
 
 
@@ -452,10 +498,19 @@ rule-providers:
   microsoft4:
     behavior: classical
     type: http
-    url: "http://154.21.81.72/microsoft4.yaml"
+    url: "http://154.12.188.13/microsoft4.yaml"
     interval: 86400
     path: ./xzxz/microsoft4.yaml
 
+
+
+# microsoft
+  microsoft5:
+    behavior: classical
+    type: http
+    url: "http://154.12.189.31/microsoft5.yaml"
+    interval: 86400
+    path: ./xzxz/microsoft5.yaml
 
 
 #░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
@@ -606,6 +661,43 @@ rules:
 
 
 
+# > Steam CDN
+- DOMAIN,steampipe.steamcontent.tnkjmec.com,DIRECT
+
+- DOMAIN,st.dl.eccdnx.com,DIRECT
+- DOMAIN,st.dl.bscstorage.net,DIRECT
+- DOMAIN,st.dl.pinyuncloud.com,DIRECT
+
+- DOMAIN,dl.steam.clngaa.com,DIRECT
+- DOMAIN,dl.steam.ksyna.com,DIRECT
+
+- DOMAIN,cdn.mileweb.cs.steampowered.com.8686c.com,DIRECT
+- DOMAIN,cdn-ws.content.steamchina.com,DIRECT
+
+- DOMAIN,cdn-qc.content.steamchina.com,DIRECT
+
+- DOMAIN,cdn-ali.content.steamchina.com,DIRECT
+- DOMAIN,xz.pphimalayanrt.com,DIRECT
+
+
+- DOMAIN,ssl-lvlt.cdn.ea.com,DIRECT
+- DOMAIN,origin-a.akamaihd.net,DIRECT
+
+
+- DOMAIN,client05.pdl.wow.battlenet.com.cn,DIRECT
+- DOMAIN,client02.pdl.wow.battlenet.com.cn,DIRECT
+
+
+- DOMAIN,epicgames-download1-1251447533.file.myqcloud.com,DIRECT
+- DOMAIN,gamedownloads-rockstargames-com.akamaized.net,DIRECT
+
+
+
+
+
+
+
+
 # SteamCN
 - DOMAIN-SUFFIX,cm.steampowered.com,DIRECT
 - DOMAIN-SUFFIX,steamcontent.com,DIRECT
@@ -619,94 +711,9 @@ rules:
 
 
 
-# Steam鍥藉唴CDN
-# 鍗庝负浜?
-- DOMAIN,steampipe.steamcontent.tnkjmec.com,DIRECT
-# 鐧藉北浜?
-- DOMAIN,st.dl.eccdnx.com,DIRECT
-- DOMAIN,st.dl.bscstorage.net,DIRECT
-- DOMAIN,st.dl.pinyuncloud.com,DIRECT
-# 閲戝北浜?
-- DOMAIN,dl.steam.clngaa.com,DIRECT
-- DOMAIN,dl.steam.ksyna.com,DIRECT
-# 缃戝
-- DOMAIN,cdn.mileweb.cs.steampowered.com.8686c.com,DIRECT
-- DOMAIN,cdn-ws.content.steamchina.com,DIRECT
-# 鑵捐浜戯紙鍥藉尯Steam鍩熷悕锛?
-- DOMAIN,cdn-qc.content.steamchina.com,DIRECT
-# 闃块噷浜?
-- DOMAIN,cdn-ali.content.steamchina.com,DIRECT
-- DOMAIN,xz.pphimalayanrt.com,DIRECT
-
-# 鐑傛瀛怬rigin
-- DOMAIN,ssl-lvlt.cdn.ea.com,DIRECT
-- DOMAIN,origin-a.akamaihd.net,DIRECT
-
-# 鎴樼綉涓浗
-- DOMAIN,client05.pdl.wow.battlenet.com.cn,DIRECT
-- DOMAIN,client02.pdl.wow.battlenet.com.cn,DIRECT
-
-# Epic涓浗鍦板尯涓嬭浇
-- DOMAIN,epicgames-download1-1251447533.file.myqcloud.com,DIRECT
-
-# Rockstar Launcher瀹㈡埛绔洿鏂?娓告垙鏇存柊/娓告垙涓嬭浇
-- DOMAIN,gamedownloads-rockstargames-com.akamaized.net,DIRECT
 
 
-
-
-
-# Epic
-- DOMAIN-SUFFIX,epicgames.com,DIRECT
-- DOMAIN-SUFFIX,helpshift.com,DIRECT
-- DOMAIN-SUFFIX,paragon.com,DIRECT
-- DOMAIN-SUFFIX,unrealengine.com,DIRECT
-
-
-
-
-# Private Tracker
-- DOMAIN-KEYWORD,announce,DIRECT
-- DOMAIN-KEYWORD,torrent,DIRECT
-- DOMAIN-KEYWORD,tracker,DIRECT
-- DOMAIN-SUFFIX,animebytes.tv,DIRECT
-- DOMAIN-SUFFIX,animetorrents.me,DIRECT
-- DOMAIN-SUFFIX,awesome-hd.me,DIRECT
-- DOMAIN-SUFFIX,beitai.pt,DIRECT
-- DOMAIN-SUFFIX,bittorrent.com,DIRECT
-- DOMAIN-SUFFIX,broadcasthe.net,DIRECT
-- DOMAIN-SUFFIX,chdbits.co,DIRECT
-- DOMAIN-SUFFIX,classix-unlimited.co.uk,DIRECT
-- DOMAIN-SUFFIX,empornium.me,DIRECT
-- DOMAIN-SUFFIX,gazellegames.net,DIRECT
-- DOMAIN-SUFFIX,hd4fans.org,DIRECT
-- DOMAIN-SUFFIX,hdchina.org,DIRECT
-- DOMAIN-SUFFIX,hdhome.org,DIRECT
-- DOMAIN-SUFFIX,hdsky.me,DIRECT
-- DOMAIN-SUFFIX,hdtime.org,DIRECT
-- DOMAIN-SUFFIX,hdzone.me,DIRECT
-- DOMAIN-SUFFIX,icetorrent.org,DIRECT
-- DOMAIN-SUFFIX,jpopsuki.eu,DIRECT
-- DOMAIN-SUFFIX,keepfrds.com,DIRECT
-- DOMAIN-SUFFIX,leaguehd.com,DIRECT
-- DOMAIN-SUFFIX,m-team.cc,DIRECT
-- DOMAIN-SUFFIX,madsrevolution.net,DIRECT
-- DOMAIN-SUFFIX,msg.vg,DIRECT
-- DOMAIN-SUFFIX,nanyangpt.com,DIRECT
-- DOMAIN-SUFFIX,ncore.cc,DIRECT
-- DOMAIN-SUFFIX,open.cd,DIRECT
-- DOMAIN-SUFFIX,ourbits.club,DIRECT
-- DOMAIN-SUFFIX,passthepopcorn.me,DIRECT
-- DOMAIN-SUFFIX,privatehd.to,DIRECT
-- DOMAIN-SUFFIX,pthome.net,DIRECT
-- DOMAIN-SUFFIX,redacted.ch,DIRECT
-- DOMAIN-SUFFIX,springsunday.net,DIRECT
-- DOMAIN-SUFFIX,tjupt.org,DIRECT
-- DOMAIN-SUFFIX,totheglory.im,DIRECT
-- DOMAIN-SUFFIX,trontv.com,DIRECT
-
-
-# Public Direct CDN 鍏叡鐩磋繛
+# CDN
 #DOMAIN-SUFFIX,ajax.aspnetcdn.com
 #DOMAIN-SUFFIX,ajax.cloudflare.com
 #DOMAIN-SUFFIX,cdnjs.cloudflare.com
@@ -727,36 +734,42 @@ rules:
 - RULE-SET,applications2,DIRECT
 - RULE-SET,applications3,DIRECT
 - RULE-SET,applications4,DIRECT
+- RULE-SET,applications5,DIRECT
+
 
 - RULE-SET,private1,DIRECT
 - RULE-SET,private2,DIRECT
 - RULE-SET,private3,DIRECT
 - RULE-SET,private4,DIRECT
-
+- RULE-SET,private5,DIRECT
 
 
 - RULE-SET,microsoft1,🅼 微软服务
 - RULE-SET,microsoft2,🅼 微软服务
 - RULE-SET,microsoft3,🅼 微软服务
 - RULE-SET,microsoft4,🅼 微软服务
-
+- RULE-SET,microsoft5,🅼 微软服务
 
 
 - RULE-SET,CNdirect1,DIRECT
 - RULE-SET,CNdirect2,DIRECT
 - RULE-SET,CNdirect3,DIRECT
 - RULE-SET,CNdirect4,DIRECT
+- RULE-SET,CNdirect5,DIRECT
+
 
 - RULE-SET,CNip1,DIRECT
 - RULE-SET,CNip2,DIRECT
 - RULE-SET,CNip3,DIRECT
 - RULE-SET,CNip4,DIRECT
+- RULE-SET,CNip5,DIRECT
+
 
 - RULE-SET,apple1,DIRECT
 - RULE-SET,apple2,DIRECT
 - RULE-SET,apple3,DIRECT
 - RULE-SET,apple4,DIRECT
-
+- RULE-SET,apple5,DIRECT
 
 
 
