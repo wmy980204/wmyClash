@@ -62,11 +62,9 @@ dns:
     ipcidr:
       - 240.0.0.0/4
     domain:
-      - '+.facebook.com'
-      - '+.youtube.com'
-      - '+.microsoft.com'
-      - '+.edgesuite.net'
-      - '+.go.dev'
+      - 'azure.microsoft.com'
+      - 'smp-device-content.apple.com'
+      - 'errors.edgesuite.net'
 
 
 #▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
@@ -181,7 +179,7 @@ proxy-groups:
     proxies:
       - DIRECT
 
-  - name: "⛽ 本月流量 (刷新订阅更新) 14092MB"
+  - name: "⛽ 本月流量 (刷新订阅更新) 13646MB"
     type: select
     proxies:
       - DIRECT
